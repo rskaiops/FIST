@@ -1,0 +1,356 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Parallel",
+  "States": {
+    "Parallel": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "Parallel (1)",
+          "States": {
+            "Parallel (1)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke",
+                  "States": {
+                    "Lambda Invoke": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo1"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (1)",
+                  "States": {
+                    "Lambda Invoke (1)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo2"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (2)",
+                  "States": {
+                    "Lambda Invoke (2)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo3"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (3)",
+                  "States": {
+                    "Lambda Invoke (3)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo4"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (4)",
+                  "States": {
+                    "Lambda Invoke (4)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo5"
+                      },
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (9)"
+            },
+            "Lambda Invoke (9)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo6"
+              },
+              "Next": "Parallel (3)"
+            },
+            "Parallel (3)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (11)",
+                  "States": {
+                    "Lambda Invoke (11)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo7"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (12)",
+                  "States": {
+                    "Lambda Invoke (12)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo8"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (13)",
+                  "States": {
+                    "Lambda Invoke (13)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo9"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (14)",
+                  "States": {
+                    "Lambda Invoke (14)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo10"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (15)",
+                  "States": {
+                    "Lambda Invoke (15)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo11"
+                      },
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (20)"
+            },
+            "Lambda Invoke (20)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo12"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Parallel (2)",
+          "States": {
+            "Parallel (2)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (5)",
+                  "States": {
+                    "Lambda Invoke (5)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo13"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (6)",
+                  "States": {
+                    "Lambda Invoke (6)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo14"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (7)",
+                  "States": {
+                    "Lambda Invoke (7)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo15"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (8)",
+                  "States": {
+                    "Lambda Invoke (8)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo16"
+                      },
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (10)"
+            },
+            "Lambda Invoke (10)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo17"
+              },
+              "Next": "Parallel (4)"
+            },
+            "Parallel (4)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (16)",
+                  "States": {
+                    "Lambda Invoke (16)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo18"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (17)",
+                  "States": {
+                    "Lambda Invoke (17)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo19"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (18)",
+                  "States": {
+                    "Lambda Invoke (18)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo20"
+                      },
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (19)",
+                  "States": {
+                    "Lambda Invoke (19)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo21"
+                      },
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (21)"
+            },
+            "Lambda Invoke (21)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Ligo22"
+              },
+              "End": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

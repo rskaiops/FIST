@@ -1,0 +1,222 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Lambda_0",
+  "States": {
+    "Lambda_0": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi1"
+      },
+      "Next": "Parallel"
+    },
+    "Parallel": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "Lambda_1",
+          "States": {
+            "Lambda_1": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi2"
+              },
+              "Next": "Lambda_1_2"
+            },
+            "Lambda_1_2": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi3"
+              },
+              "Next": "Lambda_1_3"
+            },
+            "Lambda_1_3": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi4"
+              },
+              "Next": "Lambda_1_4"
+            },
+            "Lambda_1_4": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi5"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda_2",
+          "States": {
+            "Lambda_2": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi6"
+              },
+              "Next": "Lambda_2_2"
+            },
+            "Lambda_2_2": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi7"
+              },
+              "Next": "Lambda_2_3"
+            },
+            "Lambda_2_3": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi8"
+              },
+              "Next": "Lambda_2_4"
+            },
+            "Lambda_2_4": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi9"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda_3",
+          "States": {
+            "Lambda_3": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi10"
+              },
+              "Next": "Lambda_3_2"
+            },
+            "Lambda_3_2": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi11"
+              },
+              "Next": "Lambda_3_3"
+            },
+            "Lambda_3_3": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi12"
+              },
+              "Next": "Lambda_3_4"
+            },
+            "Lambda_3_4": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi13"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda_4",
+          "States": {
+            "Lambda_4": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi14"
+              },
+              "Next": "Lambda_4_2"
+            },
+            "Lambda_4_2": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi15"
+              },
+              "Next": "Lambda_4_3"
+            },
+            "Lambda_4_3": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi16"
+              },
+              "Next": "Lambda_4_4"
+            },
+            "Lambda_4_4": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi17"
+              },
+              "End": true
+            }
+          }
+        }
+      ],
+      "Next": "Lambda_5"
+    },
+    "Lambda_5": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi18"
+      },
+      "Next": "Lambda_6"
+    },
+    "Lambda_6": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Epi19"
+      },
+      "End": true
+    }
+  }
+}

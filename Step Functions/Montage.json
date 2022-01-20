@@ -1,0 +1,244 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Parallel",
+  "States": {
+    "Parallel": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "Lambda Invoke",
+          "States": {
+            "Lambda Invoke": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_1"
+              },
+              "Next": "Parallel (1)"
+            },
+            "Parallel (1)": {
+              "Type": "Parallel",
+              "End": true,
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (4)",
+                  "States": {
+                    "Lambda Invoke (4)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_2"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (5)",
+                  "States": {
+                    "Lambda Invoke (5)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_3"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda Invoke (1)",
+          "States": {
+            "Lambda Invoke (1)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_4"
+              },
+              "Next": "Parallel (2)"
+            },
+            "Parallel (2)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (6)",
+                  "States": {
+                    "Lambda Invoke (6)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_5"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (7)",
+                  "States": {
+                    "Lambda Invoke (7)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_6"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (12)"
+            },
+            "Lambda Invoke (12)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_7"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda Invoke (2)",
+          "States": {
+            "Lambda Invoke (2)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_8"
+              },
+              "Next": "Parallel (3)"
+            },
+            "Parallel (3)": {
+              "Type": "Parallel",
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (8)",
+                  "States": {
+                    "Lambda Invoke (8)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_9"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (9)",
+                  "States": {
+                    "Lambda Invoke (9)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_10"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                }
+              ],
+              "Next": "Lambda Invoke (13)"
+            },
+            "Lambda Invoke (13)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_11"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Lambda Invoke (3)",
+          "States": {
+            "Lambda Invoke (3)": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "OutputPath": "$.Payload",
+              "Parameters": {
+                "Payload.$": "$",
+                "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_12"
+              },
+              "Next": "Parallel (4)"
+            },
+            "Parallel (4)": {
+              "Type": "Parallel",
+              "End": true,
+              "Branches": [
+                {
+                  "StartAt": "Lambda Invoke (10)",
+                  "States": {
+                    "Lambda Invoke (10)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_13"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                },
+                {
+                  "StartAt": "Lambda Invoke (11)",
+                  "States": {
+                    "Lambda Invoke (11)": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::lambda:invoke",
+                      "OutputPath": "$.Payload",
+                      "Parameters": {
+                        "Payload.$": "$",
+                        "FunctionName": "arn:aws:lambda:ap-south-1:176432049139:function:Mon_14"
+                      },
+                      
+                      "End": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
