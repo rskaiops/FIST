@@ -1,1 +1,1 @@
-Serverless_Files
+The repository contains two types first the scheduler in which I have uploaded the Greedy Algorithm code which is scheduling the Warm pool and next folder contains the Aws Step function codes which is nothing but the Workflows implemented
